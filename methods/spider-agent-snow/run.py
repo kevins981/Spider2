@@ -127,9 +127,8 @@ def test(
     with open(args.test_path, "r") as f:
         task_configs = [json.loads(line) for line in f]
 
-        
     if args.example_name != "":
-        task_configs = [task for task in task_configs if args.example_name in task["id"]]
+        task_configs = [task for task in task_configs if args.example_name in task["instance_id"]]
     else:
         if args.example_index != "all":
             if "-" in args.example_index:
